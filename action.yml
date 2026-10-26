@@ -1,6 +1,6 @@
 name: MTTX Dependency Update Metrics
 description: MTTU and MTTR of npm, PyPI, and Cargo packages, and of the dependencies that a pull request adds
-author: Imranur Rahman
+author: Imranur Rahman, Ranindya Paramitha, Mahzabin Tamanna, and Laurie Williams
 branding:
   icon: clock
   color: blue
@@ -114,7 +114,7 @@ runs:
     # and the cache saves it under the key of today.
     - name: Restore the OSV index
       if: inputs.osv-index == 'fresh'
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: ${{ runner.temp }}/mttx-data/osv_database.parquet
         key: mttx-osv-${{ steps.date.outputs.date }}
